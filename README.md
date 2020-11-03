@@ -36,10 +36,10 @@ See <https://ejelome-rhbp.netlify.app>.
 
 ## Usage
 
-| Command         | Description                       |
-| :-------------- | :-------------------------------- |
-| `npm run serve` | Start dev server and test runners |
-| `npm run build` | Build app bundle                  |
+| Command         | Description               |
+| :-------------- | :------------------------ |
+| `npm run serve` | Start servers and runners |
+| `npm run build` | Build app bundle          |
 
 ---
 

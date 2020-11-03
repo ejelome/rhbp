@@ -6,11 +6,12 @@ jobs:
       - uses: actions/checkout@v2
         env:
           DEFAULT_BRANCH: master
-      - run: npm i
-      - run: npm run lint -- --fix src/
-      - run: npm run format -- -c src/
-      - run: npm run coverage
-      - uses: cypress-io/github-action@v2
-        with:
-          start: npm start
-          wait-on: "http://localhost:3000"
+      - run: |
+          npm i
+          npm run lint -- --fix src/
+          npm run format -- -c src/
+          npm run coverage
+      # - uses: cypress-io/github-action@v2
+      #   with:
+      #     start: npm start
+      #     wait-on: "http://localhost:3000"

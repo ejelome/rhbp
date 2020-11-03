@@ -1,0 +1,11 @@
+{
+  "hello-world": [
+    {
+      "type": "articles",
+      "id": "1",
+      "attributes": {
+        "title": "hello, world"
+      }
+    }
+  ]
+}

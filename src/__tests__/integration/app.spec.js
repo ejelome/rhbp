@@ -1,8 +1,25 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 
 import App from "../../App";
 
-test("renders learn react link", () => {
-  render(<App />);
+beforeEach(() => {
+  global.fetch = jest.fn(() =>
+    Promise.resolve({
+      json: () =>
+        Promise.resolve({
+          type: "articles",
+          id: "1",
+          attributes: {
+            title: "hello, world",
+          },
+        }),
+    })
+  );
+});
+
+test("renders learn react link", async () => {
+  await act(async () => {
+    render(<App />);
+  });
   expect(screen.getByText(/hello, world/i)).toBeInTheDocument();
 });
