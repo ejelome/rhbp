@@ -1,0 +1,16 @@
+on: pull_request
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        env:
+          DEFAULT_BRANCH: master
+      - run: npm i
+      - run: npm run lint -- --fix src/
+      - run: npm run format -- -c src/
+      - run: npm run coverage
+      - uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          wait-on: "http://localhost:3000"
