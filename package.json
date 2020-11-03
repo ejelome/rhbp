@@ -19,6 +19,7 @@
     "test": "react-scripts test",
     "coverage": "npm t -- --coverage --watchAll=false",
     "e2e": "cypress",
+    "serve": "concurrently \"npm start\" \"npm t\" \"npm run e2e -- open\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -40,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^5.3.0",
     "cypress": "^5.5.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
