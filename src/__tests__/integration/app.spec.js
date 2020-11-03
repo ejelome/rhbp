@@ -4,5 +4,5 @@ import App from "../../App";
 
 test("renders learn react link", () => {
   render(<App />);
-  expect(screen.getByText(/learn react/i)).toBeInTheDocument();
+  expect(screen.getByText(/hello, world/i)).toBeInTheDocument();
 });
