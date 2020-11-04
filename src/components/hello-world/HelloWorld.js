@@ -12,7 +12,10 @@ const HelloWorld = () => {
   } = useContext(Context);
 
   useEffect(() => {
-    fetch("http://localhost:3001/hello-world/1")
+    const { REACT_APP_API_BASE_URL: apiBaseUrl } = process.env;
+    const endpoint = `${apiBaseUrl}/hello-world/1`;
+
+    fetch(endpoint)
       .then((response) => response.json())
       .then(({ attributes: { title } }) => dispatch(setTitle(title)));
   }, []);
