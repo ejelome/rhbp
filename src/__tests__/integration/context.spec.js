@@ -11,7 +11,7 @@ describe("Provider", () =>
     const reducer = (state, { type }) => {
       switch (type) {
         case GET_TITLE:
-          return { title: "hello, world" };
+          return { title: "test hello, world" };
       }
     };
     const initialState = { title: "" };
@@ -40,5 +40,5 @@ describe("Provider", () =>
       </Provider>
     );
 
-    expect(screen.getByText(/hello, world/i)).toBeInTheDocument();
+    expect(screen.getByText(/test hello, world/i)).toBeInTheDocument();
   }));

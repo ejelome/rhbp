@@ -10,7 +10,7 @@ beforeEach(() => {
           type: "articles",
           id: "1",
           attributes: {
-            title: "hello, world",
+            title: "test hello, world",
           },
         }),
     })
@@ -22,5 +22,5 @@ describe("<App />", () =>
     await act(async () => {
       render(<App />);
     });
-    expect(screen.getByText(/hello, world/i)).toBeInTheDocument();
+    expect(screen.getByText(/test hello, world/i)).toBeInTheDocument();
   }));

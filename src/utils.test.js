@@ -2,7 +2,7 @@ import { combineReducers, init } from "./utils";
 
 describe("init", () =>
   test("wraps argument in a function", () => {
-    const object = { title: "hello, world" };
+    const object = { title: "test hello, world" };
 
     const actual = init(object);
     const expected = (() => object)();
