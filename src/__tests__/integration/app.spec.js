@@ -17,9 +17,10 @@ beforeEach(() => {
   );
 });
 
-test("renders learn react link", async () => {
-  await act(async () => {
-    render(<App />);
-  });
-  expect(screen.getByText(/hello, world/i)).toBeInTheDocument();
-});
+describe("<App />", () =>
+  test("renders learn react link", async () => {
+    await act(async () => {
+      render(<App />);
+    });
+    expect(screen.getByText(/hello, world/i)).toBeInTheDocument();
+  }));
