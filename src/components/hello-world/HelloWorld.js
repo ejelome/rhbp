@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
 import { Context } from "../../context";
 import { setTitle } from "./actions";
@@ -11,14 +11,13 @@ const HelloWorld = () => {
     dispatch,
   } = useContext(Context);
 
-  const handleChange = ({ target: { value } }) => dispatch(setTitle(value));
+  useEffect(() => {
+    fetch("http://localhost:3001/hello-world/1")
+      .then((response) => response.json())
+      .then(({ attributes: { title } }) => dispatch(setTitle(title)));
+  }, []);
 
-  return (
-    <>
-      <input value={title} onChange={handleChange} />
-      <h1>{title}</h1>
-    </>
-  );
+  return <h1>{title}</h1>;
 };
 
 export default HelloWorld;
