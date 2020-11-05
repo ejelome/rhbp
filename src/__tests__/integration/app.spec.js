@@ -10,16 +10,17 @@ beforeEach(() => {
           type: "articles",
           id: "1",
           attributes: {
-            title: "hello, world",
+            title: "test hello, world",
           },
         }),
     })
   );
 });
 
-test("renders learn react link", async () => {
-  await act(async () => {
-    render(<App />);
-  });
-  expect(screen.getByText(/hello, world/i)).toBeInTheDocument();
-});
+describe("<App />", () =>
+  test("renders learn react link", async () => {
+    await act(async () => {
+      render(<App />);
+    });
+    expect(screen.getByText(/test hello, world/i)).toBeInTheDocument();
+  }));

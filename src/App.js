@@ -1,25 +1,28 @@
-import { useEffect, useState } from "react";
+import React from "react";
 
-const App = () => {
-  const initialState = () => ({ title: "" });
-  const [resource, setResource] = useState(initialState);
+import HelloWorld from "./components/hello-world/HelloWorld";
+import helloWorldState from "./components/hello-world/initialState";
+import helloWorldReducer from "./components/hello-world/reducer";
+import { Context, Provider } from "./context";
+import { combineReducers, init } from "./utils";
 
-  useEffect(() => {
-    const { REACT_APP_BASE_API_URL: baseUrl } = process.env;
-    const id = 1;
-    const path = "hello-world";
-    const endpoint = `${baseUrl}/${path}/${id}`;
-
-    fetch(endpoint)
-      .then((response) => response.json())
-      .then(({ attributes }) =>
-        setResource((prevResource) => ({ prevResource, ...attributes }))
-      );
-  }, []);
-
-  const { title } = resource;
-
-  return <h1>{title}</h1>;
+const initialStates = {
+  helloWorld: helloWorldState,
 };
+
+const reducers = combineReducers({
+  helloWorld: helloWorldReducer,
+});
+
+const App = () => (
+  <Provider
+    context={Context}
+    reducer={reducers}
+    initialState={initialStates}
+    init={init}
+  >
+    <HelloWorld />
+  </Provider>
+);
 
 export default App;
