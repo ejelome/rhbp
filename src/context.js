@@ -10,8 +10,13 @@ export const Provider = ({
   children,
 }) => {
   const [state, dispatch] = useReducer(reducer, initialState, init);
-  const values = { state, dispatch };
   const { Provider } = context;
+  const props = {
+    value: {
+      state,
+      dispatch,
+    },
+  };
 
-  return <Provider value={values}>{children}</Provider>;
+  return <Provider {...props}>{children}</Provider>;
 };

@@ -1,14 +1,8 @@
 import { SET_TITLE } from "./actionTypes";
 
-const reducer = (state, { type, payload }) => {
-  switch (type) {
-    case SET_TITLE:
-      const title = payload.title;
-
-      return { ...state, title };
-    default:
-      return state;
-  }
-};
+const reducer = (state, { type, payload: { title } }) =>
+  ({
+    SET_TITLE: { ...state, title },
+  }[type] || state);
 
 export default reducer;
