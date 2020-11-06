@@ -1,5 +1,5 @@
 ![.github/workflows/ci.yml](https://github.com/ejelome/rhbp/workflows/.github/workflows/ci.yml/badge.svg)
-[![codecov](https://codecov.io/gh/ejelome/rhbp/branch/main/graph/badge.svg?token=2QG3DXU720)](https://codecov.io/gh/ejelome/rhbp)
+[![codecov](https://codecov.io/gh/ejelome/rhbp/branch/main/graph/badge.svg?token=2QG3DXU720)](https://codecov.io/gh/ejelome/rhbp?branch=main)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/dd3d0f48-d6b9-461c-a486-9c598a6ab233/deploy-status)](https://app.netlify.com/sites/ejelome-rhbp/deploys)
 
 # rhbp
