@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
+import NavBar from "./components/nav-bar/NavBar";
 import { Context } from "./ContextProvider";
 
 const Router = () => {
@@ -11,6 +12,7 @@ const Router = () => {
 
   return (
     <BrowserRouter>
+      <NavBar />
       <Switch>
         {routes.map((props, i) => (
           <Route key={i} {...props} />
