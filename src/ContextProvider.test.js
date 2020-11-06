@@ -1,6 +1,6 @@
-import React, { createContext } from "react";
+import { createContext } from "react";
 
-import { Context } from "./context";
+import { Context } from "./ContextProvider";
 
 describe("Context", () =>
   test("wrapped an empty object as initial context", () => {
