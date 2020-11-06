@@ -6,13 +6,8 @@ import helloWorldReducer from "./components/hello-world/reducer";
 import { Context, Provider } from "./context";
 import { combineReducers, init } from "./utils";
 
-const initialStates = {
-  helloWorld: helloWorldState,
-};
-
-const reducers = combineReducers({
-  helloWorld: helloWorldReducer,
-});
+const initialStates = { helloWorld: helloWorldState };
+const reducers = combineReducers({ helloWorld: helloWorldReducer });
 
 const App = () => (
   <Provider

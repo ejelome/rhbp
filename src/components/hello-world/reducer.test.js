@@ -3,25 +3,25 @@ import reducer from "./reducer";
 
 describe("reducer", () => {
   it("merges payload with corresponding action type to state", () => {
-    const state = { title: "" };
-    const type = SET_TITLE;
+    const initialState = { title: "" };
+    const actionType = SET_TITLE;
     const payload = { title: "test hello world" };
-    const action = { type, payload };
+    const action = { type: actionType, payload };
 
-    const actual = reducer(state, action);
+    const actual = reducer(initialState, action);
     const expected = payload;
 
     expect(actual).toEqual(expected);
   });
 
   it("returns default state if no action type match", () => {
-    const state = { title: "" };
-    const type = "UNKNOWN_ACTION_TYPE";
+    const initialState = { title: "" };
+    const actionType = "UNKNOWN_ACTION_TYPE";
     const payload = { title: "test hello world" };
-    const action = { type, payload };
+    const action = { type: actionType, payload };
 
-    const actual = reducer(state, action);
-    const expected = state;
+    const actual = reducer(initialState, action);
+    const expected = initialState;
 
     expect(actual).toEqual(expected);
   });

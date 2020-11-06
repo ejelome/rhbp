@@ -4,16 +4,14 @@ import React, { createContext, useContext, useEffect } from "react";
 import { Provider } from "../../context";
 import { init } from "../../utils";
 
-describe("Provider", () =>
+describe("<Provider/>", () =>
   test("provides context to child components", () => {
     const context = createContext({});
-    const GET_TITLE = "GET_TITLE";
-    const reducer = (state, { type }) => {
-      switch (type) {
-        case GET_TITLE:
-          return { title: "test hello, world" };
-      }
-    };
+    const SET_TITLE = "SET_TITLE";
+    const reducer = (state, { type }) =>
+      ({
+        SET_TITLE: { title: "test hello, world" },
+      }[type] || state);
     const initialState = { title: "" };
 
     const Title = () => {
@@ -23,7 +21,7 @@ describe("Provider", () =>
       } = useContext(context);
 
       useEffect(() => {
-        dispatch({ type: GET_TITLE });
+        dispatch({ type: SET_TITLE });
       }, []);
 
       return <h1>{title}</h1>;
