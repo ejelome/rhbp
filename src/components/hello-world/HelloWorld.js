@@ -1,6 +1,6 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 
-import { Context } from "../../context";
+import { Context } from "../../ContextProvider";
 import { setTitle } from "./actions";
 
 const HelloWorld = () => {
