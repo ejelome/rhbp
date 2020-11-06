@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import React, { createContext, useContext, useEffect } from "react";
+import { createContext, useContext, useEffect } from "react";
 
-import { Provider } from "../../context";
+import { Provider } from "../../ContextProvider";
 import { init } from "../../utils";
 
 describe("<Provider/>", () =>
