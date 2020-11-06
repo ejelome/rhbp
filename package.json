@@ -43,10 +43,10 @@
     ]
   },
   "devDependencies": {
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.3.1",
     "concurrently": "^5.3.0",
     "cypress": "^5.5.0",
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.5",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-simple-import-sort": "^5.0.3",
     "husky": "^4.3.0",
