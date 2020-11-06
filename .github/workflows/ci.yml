@@ -10,12 +10,7 @@ jobs:
           REACT_APP_API_BASE_URL: http://localhost:3001
       - run: |
           npm i
-          npm run lint -- --fix src/
-          npm run format -- -c src/
-          npm run coverage
-          npm start &
-          npm run api &
-          npm run e2e -- run --headed --browser chrome
+          npm run ci
       - uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
