@@ -19,6 +19,6 @@ jobs:
         with:
           start: npm start
           wait-on: "http://localhost:3000"
-      - uses: coverallsapp/github-action@master
+      - uses: codecov/codecov-action@v1
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.CODECOV_TOKEN }}
