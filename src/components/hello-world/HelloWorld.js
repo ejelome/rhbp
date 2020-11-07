@@ -1,8 +1,16 @@
 import { Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import { useContext, useEffect } from "react";
 
 import { Context } from "../../ContextProvider";
 import { setTitle } from "./actions";
+
+const useStyles = makeStyles(({ palette }) => ({
+  root: {
+    backgroundColor: palette.common.black,
+    "& h1": { color: palette.common.white },
+  },
+}));
 
 const HelloWorld = () => {
   const {
@@ -11,6 +19,7 @@ const HelloWorld = () => {
     },
     dispatch,
   } = useContext(Context);
+  const { root } = useStyles();
 
   useEffect(() => {
     const { REACT_APP_API_BASE_URL: apiBaseUrl } = process.env;
@@ -21,7 +30,11 @@ const HelloWorld = () => {
       .then(({ attributes: { title } }) => dispatch(setTitle(title)));
   }, []);
 
-  return <Typography variant="h1">{title}</Typography>;
+  return (
+    <div className={root}>
+      <Typography variant="h1">{title}</Typography>
+    </div>
+  );
 };
 
 export default HelloWorld;
