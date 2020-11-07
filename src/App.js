@@ -3,7 +3,7 @@ import "fontsource-roboto/400.css";
 import "fontsource-roboto/500.css";
 import "fontsource-roboto/700.css";
 
-import { CssBaseline } from "@material-ui/core";
+import { Container, CssBaseline } from "@material-ui/core";
 import {
   createMuiTheme,
   responsiveFontSizes,
@@ -31,8 +31,10 @@ const App = () => (
     init={init}
   >
     <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Router />
+      <Container disableGutters={true}>
+        <CssBaseline />
+        <Router />
+      </Container>
     </ThemeProvider>
   </Provider>
 );
