@@ -1,5 +1,6 @@
+import { Link } from "@material-ui/core";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
 import { Context } from "../../ContextProvider";
 
@@ -16,7 +17,9 @@ const NavBar = () => {
           ({ name, path }, i) =>
             name && (
               <li key={i}>
-                <Link to={path}>{name}</Link>
+                <Link component={RouterLink} to={path}>
+                  {name}
+                </Link>
               </li>
             )
         )}
