@@ -1,5 +1,5 @@
 import { Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { useContext, useEffect } from "react";
 
 import { Context } from "../../ContextProvider";
@@ -20,6 +20,9 @@ const HelloWorld = () => {
     dispatch,
   } = useContext(Context);
   const { root } = useStyles();
+  const {
+    palette: { type },
+  } = useTheme();
 
   useEffect(() => {
     const { REACT_APP_API_BASE_URL: apiBaseUrl } = process.env;
@@ -27,7 +30,9 @@ const HelloWorld = () => {
 
     fetch(endpoint)
       .then((response) => response.json())
-      .then(({ attributes: { title } }) => dispatch(setTitle(title)));
+      .then(({ attributes: { title } }) =>
+        dispatch(setTitle(`${type} ${title}`))
+      );
   }, []);
 
   return (
