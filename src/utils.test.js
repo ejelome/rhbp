@@ -17,13 +17,13 @@ describe("combineReducers", () =>
     const ACTION_TYPE_C = "ACTION_TYPE_C";
 
     const reducerA = (state, { type }) =>
-      ({ ACTION_TYPE_A: "reducerA" }[type] || state);
+      ({ [ACTION_TYPE_A]: "reducerA" }[type] || state);
 
     const reducerB = (state, { type }) =>
-      ({ ACTION_TYPE_B: "reducerB" }[type] || state);
+      ({ [ACTION_TYPE_B]: "reducerB" }[type] || state);
 
     const reducerC = (state, { type }) =>
-      ({ ACTION_TYPE_C: "reducerC" }[type] || state);
+      ({ [ACTION_TYPE_C]: "reducerC" }[type] || state);
 
     const reducers = combineReducers({
       A: reducerA,

@@ -22,7 +22,7 @@ describe("<Provider/>", () =>
 
       useEffect(() => {
         dispatch({ type: SET_TITLE });
-      }, []);
+      }, [dispatch]);
 
       return <h1>{title}</h1>;
     };

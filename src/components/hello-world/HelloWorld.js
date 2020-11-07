@@ -22,7 +22,7 @@ const HelloWorld = () => {
     fetch(endpoint)
       .then((response) => response.json())
       .then(({ attributes: { title } }) => dispatch(setTitle(`${title}`)));
-  }, []);
+  }, [dispatch]);
 
   return (
     <Grid
