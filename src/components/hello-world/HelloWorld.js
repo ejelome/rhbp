@@ -1,14 +1,15 @@
 import { Typography } from "@material-ui/core";
+import { grey } from "@material-ui/core/colors";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { useContext, useEffect } from "react";
 
 import { Context } from "../../ContextProvider";
 import { setTitle } from "./actions";
 
-const useStyles = makeStyles(({ palette }) => ({
+const useStyles = makeStyles(() => ({
   root: {
-    backgroundColor: palette.common.black,
-    "& h1": { color: palette.common.white },
+    backgroundColor: grey[900], // near-black: #212121
+    "& h1": { color: grey[50] }, // near-white: #fafafa
   },
 }));
 
