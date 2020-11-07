@@ -1,3 +1,5 @@
+import { CssBaseline } from "@material-ui/core";
+
 import HelloWorld from "./components/hello-world/HelloWorld";
 import helloWorldState from "./components/hello-world/initialState";
 import helloWorldReducer from "./components/hello-world/reducer";
@@ -15,6 +17,7 @@ const App = () => (
     initialState={initialStates}
     init={init}
   >
+    <CssBaseline />
     <Router />
   </Provider>
 );
