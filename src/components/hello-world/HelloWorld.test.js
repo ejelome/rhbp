@@ -12,5 +12,10 @@ jest.mock("react", () => {
   };
 });
 
+jest.mock("@material-ui/core/styles", () => ({
+  makeStyles: () => () => ({}),
+  useTheme: () => ({ palette: {} }),
+}));
+
 describe("<HelloWorld />", () =>
   it("renders without crashing", async () => await shallow(<HelloWorld />)));

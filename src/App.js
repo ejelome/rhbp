@@ -1,8 +1,8 @@
-import HelloWorld from "./components/hello-world/HelloWorld";
 import helloWorldState from "./components/hello-world/initialState";
 import helloWorldReducer from "./components/hello-world/reducer";
 import { Context, Provider } from "./ContextProvider";
 import Router from "./Router";
+import Theme from "./Theme";
 import { combineReducers, init } from "./utils";
 
 const initialStates = { helloWorld: helloWorldState };
@@ -15,7 +15,9 @@ const App = () => (
     initialState={initialStates}
     init={init}
   >
-    <Router />
+    <Theme>
+      <Router />
+    </Theme>
   </Provider>
 );
 
