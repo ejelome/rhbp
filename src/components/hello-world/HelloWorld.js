@@ -1,17 +1,9 @@
 import { Grid, Paper, Typography } from "@material-ui/core";
-import { grey } from "@material-ui/core/colors";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { useContext, useEffect } from "react";
 
 import { Context } from "../../ContextProvider";
 import { setTitle } from "./actions";
-
-const useStyles = makeStyles(() => ({
-  root: {
-    backgroundColor: grey[900], // near-black: #212121
-    "& h1": { color: grey[50] }, // near-white: #fafafa
-  },
-}));
+import styles from "./styles";
 
 const HelloWorld = () => {
   const {
@@ -20,10 +12,8 @@ const HelloWorld = () => {
     },
     dispatch,
   } = useContext(Context);
-  const { root } = useStyles();
-  const {
-    palette: { type },
-  } = useTheme();
+
+  const { root } = styles();
 
   useEffect(() => {
     const { REACT_APP_API_BASE_URL: apiBaseUrl } = process.env;
@@ -31,9 +21,7 @@ const HelloWorld = () => {
 
     fetch(endpoint)
       .then((response) => response.json())
-      .then(({ attributes: { title } }) =>
-        dispatch(setTitle(`${type} ${title}`))
-      );
+      .then(({ attributes: { title } }) => dispatch(setTitle(`${title}`)));
   }, []);
 
   return (
@@ -44,8 +32,9 @@ const HelloWorld = () => {
       direction="column"
       alignItems="center"
       spacing={4}
+      className={root}
     >
-      <Grid item className={root}>
+      <Grid item>
         <Typography variant="h1">{title}</Typography>
       </Grid>
     </Grid>
