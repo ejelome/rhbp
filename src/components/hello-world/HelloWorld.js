@@ -1,4 +1,4 @@
-import { Typography } from "@material-ui/core";
+import { Grid, Paper, Typography } from "@material-ui/core";
 import { grey } from "@material-ui/core/colors";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { useContext, useEffect } from "react";
@@ -37,9 +37,18 @@ const HelloWorld = () => {
   }, []);
 
   return (
-    <div className={root}>
-      <Typography variant="h1">{title}</Typography>
-    </div>
+    <Grid
+      component={Paper}
+      elevation={0}
+      container
+      direction="column"
+      alignItems="center"
+      spacing={4}
+    >
+      <Grid item className={root}>
+        <Typography variant="h1">{title}</Typography>
+      </Grid>
+    </Grid>
   );
 };
 
