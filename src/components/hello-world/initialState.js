@@ -1,7 +1,7 @@
 import HelloWorld from "./HelloWorld";
 
 const initialState = {
-  title: "hello, world",
+  title: "",
   routes: [
     {
       name: "Hello World!",
