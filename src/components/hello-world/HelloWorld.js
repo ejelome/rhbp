@@ -1,3 +1,4 @@
+import { Typography } from "@material-ui/core";
 import { useContext, useEffect } from "react";
 
 import { Context } from "../../ContextProvider";
@@ -20,7 +21,7 @@ const HelloWorld = () => {
       .then(({ attributes: { title } }) => dispatch(setTitle(title)));
   }, []);
 
-  return <h1>{title}</h1>;
+  return <Typography variant="h1">{title}</Typography>;
 };
 
 export default HelloWorld;
